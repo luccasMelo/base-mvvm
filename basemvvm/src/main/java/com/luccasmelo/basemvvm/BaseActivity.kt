@@ -19,7 +19,7 @@ abstract class BaseActivity:AppCompatActivity(), Base{
         viewDataBinding = DataBindingUtil.setContentView(this,resourceId())
         if(savedInstanceState == null) {
             injectDependencies()
-            viewModel = ViewModelProviders.of(this).get(viewModel())
+            viewModel = ViewModelProviders.of(this).get(viewModel()::class.java)
             bind()
             onCreate()
         }else{
