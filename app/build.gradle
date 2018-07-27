@@ -36,4 +36,9 @@ dependencies {
 
     //Databinding
     kapt "com.android.databinding:compiler:$android_plugin_version"
+
+    //LifeCycle
+    implementation "android.arch.lifecycle:extensions:${lifecycleVersion}"
+
+    compile project(path: ':basemvvm')
 }

@@ -8,10 +8,10 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
 
-abstract class BaseActivity:AppCompatActivity(), Base{
+abstract class BaseActivity<VM:ViewModel>:AppCompatActivity(), Base<VM>{
 
     lateinit var activityComponent: ActivityComponent
-    lateinit var viewModel: ViewModel
+    lateinit var viewModel: VM
     lateinit var viewDataBinding: ViewDataBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,15 +19,13 @@ abstract class BaseActivity:AppCompatActivity(), Base{
         viewDataBinding = DataBindingUtil.setContentView(this,resourceId())
         if(savedInstanceState == null) {
             injectDependencies()
-            viewModel = ViewModelProviders.of(this).get(viewModel()::class.java)
+            viewModel = viewModel()
             bind()
             onCreate()
         }else{
             onRecreate()
         }
     }
-
-
 
 
 

@@ -12,12 +12,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-abstract class BaseFragment<B : ViewDataBinding> : Fragment(), Base {
+abstract class BaseFragment<B : ViewDataBinding, VM : ViewModel> : Fragment(), Base<VM> {
 
     lateinit var activityComponent: ActivityComponent
     lateinit var activity: BaseActivity
     lateinit var binding: B
-    lateinit var viewModel: ViewModel
+    lateinit var viewModel: VM
 
 
     override fun onAttach(context: Context?) {
@@ -35,7 +35,7 @@ abstract class BaseFragment<B : ViewDataBinding> : Fragment(), Base {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, resourceId(), container, false)
         if (savedInstanceState == null) {
-            viewModel = ViewModelProviders.of(this).get(viewModel()::class.java)
+            viewModel = viewModel()
             bind()
             onCreate()
         }else{
