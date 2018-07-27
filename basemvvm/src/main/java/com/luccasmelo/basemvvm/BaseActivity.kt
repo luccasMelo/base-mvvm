@@ -8,7 +8,7 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
 
-abstract class BaseActivity:AppCompatActivity(), Base{
+abstract class BaseActivity<VM:ViewModel>:AppCompatActivity(), Base<VM>{
 
     lateinit var activityComponent: ActivityComponent
     lateinit var viewModel: ViewModel
@@ -26,6 +26,8 @@ abstract class BaseActivity:AppCompatActivity(), Base{
             onRecreate()
         }
     }
+
+
 
 
 

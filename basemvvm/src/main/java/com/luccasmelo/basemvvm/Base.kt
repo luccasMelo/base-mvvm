@@ -1,11 +1,11 @@
 package com.luccasmelo.basemvvm
 
-public interface  Base{
+public interface  Base<T>{
 
     fun injectDependencies()
     fun bind()
     fun resourceId(): Int
-    fun <T> viewModel():Class<T>
+    fun viewModel():Class<T>
     fun onCreate()
     fun onRecreate()
 }

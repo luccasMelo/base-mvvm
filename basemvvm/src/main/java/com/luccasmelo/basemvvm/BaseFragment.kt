@@ -12,7 +12,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-abstract class BaseFragment<B : ViewDataBinding, VM : ViewModel> : Fragment(), Base {
+abstract class BaseFragment<B : ViewDataBinding, VM : ViewModel> : Fragment(), Base<VM> {
 
     lateinit var activityComponent: ActivityComponent
     lateinit var activity: BaseActivity
