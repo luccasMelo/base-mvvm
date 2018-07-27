@@ -7,9 +7,9 @@ import android.os.Bundle
 import com.luccasmelo.basemvvm.BaseActivity
 import kotlin.reflect.KClass
 
-class MainActivity : BaseActivity<TestViewModel>() {
+class MainActivity : BaseActivity() {
 
-    override fun viewModel(): TestViewModel {
+    override fun viewModel(): ViewModel {
        return ViewModelProviders.of(this).get(TestViewModel::class.java)
     }
 

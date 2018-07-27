@@ -40,5 +40,5 @@ dependencies {
     //LifeCycle
     implementation "android.arch.lifecycle:extensions:${lifecycleVersion}"
 
-    compile project(path: ':basemvvm')
+    implementation project(path: ':basemvvm')
 }

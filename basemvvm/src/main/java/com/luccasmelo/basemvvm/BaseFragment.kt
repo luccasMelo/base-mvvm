@@ -22,11 +22,11 @@ abstract class BaseFragment<B : ViewDataBinding, VM : ViewModel> : Fragment(), B
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
-        if (context is BaseActivity) {
-            activity = context
+
+            activity = context as BaseActivity
             activityComponent = activity.activityComponent
             injectDependencies()
-        }
+
 
     }
 
