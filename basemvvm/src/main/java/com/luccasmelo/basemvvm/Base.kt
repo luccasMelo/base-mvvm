@@ -1,11 +1,13 @@
 package com.luccasmelo.basemvvm
 
-public interface  Base<T>{
+import android.arch.lifecycle.ViewModel
+
+public interface  Base{
 
     fun injectDependencies()
     fun bind()
     fun resourceId(): Int
-    fun viewModel():Class<T>
+    fun  viewModel():Class<ViewModel>
     fun onCreate()
     fun onRecreate()
 }

@@ -12,12 +12,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-abstract class BaseFragment<B : ViewDataBinding, VM : ViewModel> : Fragment(), Base<VM> {
+abstract class BaseFragment<B : ViewDataBinding> : Fragment(), Base {
 
     lateinit var activityComponent: ActivityComponent
     lateinit var activity: BaseActivity
     lateinit var binding: B
-    lateinit var viewModel: VM
+    lateinit var viewModel: ViewModel
 
 
     override fun onAttach(context: Context?) {
