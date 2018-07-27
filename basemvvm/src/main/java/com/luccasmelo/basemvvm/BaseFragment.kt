@@ -35,7 +35,7 @@ abstract class BaseFragment<B : ViewDataBinding> : Fragment(), Base {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, resourceId(), container, false)
         if (savedInstanceState == null) {
-            viewModel = ViewModelProviders.of(this).get(viewModel())
+            viewModel = ViewModelProviders.of(this).get(viewModel()::class.java)
             bind()
             onCreate()
         }else{

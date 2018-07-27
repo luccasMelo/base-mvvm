@@ -7,7 +7,7 @@ public interface  Base{
     fun injectDependencies()
     fun bind()
     fun resourceId(): Int
-    fun  viewModel():Class<ViewModel>
+    fun  viewModel():ViewModel
     fun onCreate()
     fun onRecreate()
 }
